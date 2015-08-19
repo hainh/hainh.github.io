@@ -15,7 +15,7 @@ layout: barebones
 				<div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
 					{% assign i = 1 %}
 					{% for post in site.categories[page.catname] %}
-						{% increase i %}
+						{% increment i %}
 						{% assign ii = i | modulo: 2 %}
 						{% if ii == 1 %}
 							{% continue %}
@@ -34,7 +34,7 @@ layout: barebones
 				<div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
 					{% assign i = 1 %}
 					{% for post in site.categories[page.catname] %}
-						{% increase i %}
+						{% increment i %}
 						{% assign ii = i | modulo: 2 %}
 						{% if ii == 0 %}
 							{% continue %}
