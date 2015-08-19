@@ -5,6 +5,7 @@ plugins:     ./_plugins
 layouts:     ./_layouts
 data_source: ./_data
 collections: null
+url: http://hainh.gamesen.vn
 
 # Handling Reading
 safe:         false
@@ -51,12 +52,6 @@ defaults:
         values:
             layout: "default"
             author: "hainh"
-
-#Commenting
-comments :
-    provider : disqus
-    disqus :
-        short_name : nguyenhonghai
 
 # Markdown Processors
 rdiscount:
