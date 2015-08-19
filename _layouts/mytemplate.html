@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
+{% if page.lang %}
+{% assign lang = page.lang %}
+{% else %}
+{% assign lang = "vi" %}
+{% endif %}
+<head lang="{{ lang }}">
 	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-	<title></title>
+    <meta name="description" content="{{ page.description }}">
+    {% if page.author %}
+    {% assign author = page.author %}
+    {% else %}
+    {% assign author = "hainh" %}
+    {% endif %}
+    <link rel="author" href="https://plus.google.com/+{{ site.data.authors[author].gplus.profile }}"/>
+	<title>{{ page.title }}</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<style type="text/css">
 html,
@@ -51,6 +64,9 @@ body {
 	font-family: Verdana;
 	font-weight: 300;
 	font-size: 40px;
+}
+.title::hover{
+
 }
 .introduction{
 	margin-top: 40px;
@@ -112,52 +128,40 @@ body {
 	<div class="container">
 		<!-- All post index template -->
 		<div class="row" des="Index of all posts">
-			<div class="row">
-				<p class="introduction">{{ page.description}}</p>
-			</div>
-			<div class="row">
-				<div class="toc">All posts</div>
-				<hr/>
-			</div>
-			<div class="row">
-				<!-- Ok, we have two cols of posts -->
-				<!-- First column -->
-				<div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
-					{% assign i = 1 %}
-					{% for post in site.posts %}
-						{% assign i = i | plus: 1 %}
-						{% assign ii = i | modulo: 2 %}
-						{% if ii == 1 %}
-							{% continue %}
-						{% endif %}
-						<div class="row post-excerpt">
-							<p class="title">{{ post.title }}</p>
-							<div class="meta-data-post">
-								<span class="time">{{ post.date | "%b %d, %Y"}}</span><span class="vert-separator"></span>
-								<span class="author">{{ site.data.authors[post.author].fullname }}</span>
-							</div>
-							<p class="excerpt">{{ post.excerpt }}</p>
-						</div>
-					{% endfor %}
+			<div class="col-xs-12 col-lg-12">
+				<div class="row">
+					<p class="introduction">{{ page.description}}</p>
 				</div>
-				<!-- Second column -->
-				<div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
-					{% assign i = 1 %}
-					{% for post in site.posts %}
-						{% assign i = i | plus: 1 %}
-						{% assign ii = i | modulo: 2 %}
-						{% if ii == 0 %}
-							{% continue %}
-						{% endif %}
-						<div class="row post-excerpt">
-							<p class="title">{{ post.title }}</p>
-							<div class="meta-data-post">
-								<span class="time">{{ post.date | "%b %d, %Y"}}</span><span class="vert-separator"></span>
-								<span class="author">{{ site.data.authors[post.author].fullname }}</span>
-							</div>
-							<p class="excerpt">{{ post.excerpt }}</p>
-						</div>
-					{% endfor %}
+				<div class="row">
+					<div class="toc">All posts</div>
+					<hr/>
+				</div>
+				<div class="row">
+					<!-- Ok, we have two cols of posts -->
+					<!-- First column -->
+					<div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+						{% assign i = 1 %}
+						{% for post in site.posts %}
+							{% assign i = i | plus: 1 %}
+							{% assign ii = i | modulo: 2 %}
+							{% if ii == 1 %}
+								{% continue %}
+							{% endif %}
+							{{ include post-excerpt.html }}
+						{% endfor %}
+					</div>
+					<!-- Second column -->
+					<div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+						{% assign i = 1 %}
+						{% for post in site.posts %}
+							{% assign i = i | plus: 1 %}
+							{% assign ii = i | modulo: 2 %}
+							{% if ii == 0 %}
+								{% continue %}
+							{% endif %}
+							{{ include post-excerpt.html }}
+						{% endfor %}
+					</div>
 				</div>
 			</div>
 		</div>

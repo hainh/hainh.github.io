@@ -1,7 +1,8 @@
 ---
 layout: barebones
 ---
-		<div class="row" des="Index of all posts">
+	<div class="row" des="Index of all posts">
+		<div class="col-xs-12 col-lg-12">
 			<div class="row">
 				<p class="introduction">{{ page.description}}</p>
 			</div>
@@ -20,14 +21,7 @@ layout: barebones
 						{% if ii == 1 %}
 							{% continue %}
 						{% endif %}
-						<div class="row post-excerpt">
-							<p class="title">{{ post.title }}</p>
-							<div class="meta-data-post">
-								<span class="time">{{ post.date | "%b %d, %Y"}}</span><span class="vert-separator"></span>
-								<span class="author">{{ site.data.authors[post.author].fullname }}</span>
-							</div>
-							<p class="excerpt">{{ post.excerpt | strip_html }}</p>
-						</div>
+						{{ include post-excerpt.html }}
 					{% endfor %}
 				</div>
 				<!-- Second column -->
@@ -39,15 +33,9 @@ layout: barebones
 						{% if ii == 0 %}
 							{% continue %}
 						{% endif %}
-						<div class="row post-excerpt">
-							<p class="title">{{ post.title }}</p>
-							<div class="meta-data-post">
-								<span class="time">{{ post.date | "%b %d, %Y"}}</span><span class="vert-separator"></span>
-								<span class="author">{{ site.data.authors[post.author].fullname }}</span>
-							</div>
-							<p class="excerpt">{{ post.excerpt | strip_html }}</p>
-						</div>
+						{{ include post-excerpt.html }}
 					{% endfor %}
 				</div>
 			</div>
 		</div>
+	</div>

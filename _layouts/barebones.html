@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
+{% if page.lang %}
+{% assign lang = page.lang %}
+{% else %}
+{% assign lang = "vi" %}
+{% endif %}
+<head lang="{{ lang }}">
 	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="{{ page.description }}">
+    {% if page.author %}
+    {% assign author = page.author %}
+    {% else %}
+    {% assign author = "hainh" %}
+    {% endif %}
+    <link rel="author" href="https://plus.google.com/+{{ site.data.authors[author].gplus.profile }}"/>
 	<title>{{ page.title }}</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<style type="text/css">
@@ -88,7 +101,7 @@ body {
 	</style>
 </head>
 <body>
-<div id="wrap" class="container">
+<div id="wrap">
 	<nav class="navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
@@ -113,8 +126,10 @@ body {
 		{{ content }}
 	</div>
 </div>
-<div id="footer" class="container">
-	<div>Copyright &copy; 2015 Hai Nguyen. Theme and code by me. Hosted by <a href="https://github.com/hainh/hainh.github.io">GitHub</a> and powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.</div>
+<div id="footer">
+	<div class="container">
+		<div>Copyright &copy; 2015 Hai Nguyen. Theme and code by me. Hosted by <a href="https://github.com/hainh/hainh.github.io">GitHub</a> and powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.</div>
+	</div>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

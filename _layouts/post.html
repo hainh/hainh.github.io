@@ -5,7 +5,7 @@ layout: barebones
 			<div class="col-xs-12 col-lg-1"></div>
 			<div class="col-xs-12 col-lg-10 post">
 				<div class="row post-content">
-					<p class="title">{{ page.title }}</p>
+					<p class="title">{{ page.title | upcase }}</p>
 					<div class="meta-data-post">
 						<span class="time">{{ page.date | "%A %b %d, %Y" }}</span><span class="vert-separator"></span>
 						<span class="author">{% assign author = site.data.authors[page.author] %}{{ author.fullname }}</span>
