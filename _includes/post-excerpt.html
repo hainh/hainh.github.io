@@ -2,7 +2,7 @@
 	<div class="col-xs-12">
 		<a class="title" href="{{post.url}}">{{ post.title | upcase }}</a>
 		<div class="meta-data-post">
-			<span class="time">{{ post.date | date: "%b"}} {{ post.date | date: "%d"}}, {{ post.date | date: "%Y"}}</span><span class="vert-separator"></span>
+			<span class="time">{{ post.date | date: "%b %d, %Y"}}</span><span class="vert-separator"></span>
 			<span class="author">{{ site.data.authors[post.author].fullname }}</span>
 		</div>
 		<p class="excerpt">{{ post.excerpt | strip_html }}</p>
