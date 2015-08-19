@@ -3,7 +3,7 @@ layout: barebones
 ---
 		<div class="row" des="Index of all posts">
 			<div class="row">
-				<p class="introduction">{{ page.description}}</p>
+				<p class="introduction">{{ page.description }}</p>
 			</div>
 			<div class="row">
 				<div class="toc">All posts with tags <span class="label label-warning"></span>{{ page.tagname }}</div>
@@ -21,12 +21,12 @@ layout: barebones
 							{% continue %}
 						{% endif %}
 						<div class="row post-excerpt">
-							<p class="title">{{ post.title }}</p>
+							<p class="title">{{ post.title | capitalize }}</p>
 							<div class="meta-data-post">
 								<span class="time">{{ post.date | "%b %d, %Y"}}</span><span class="vert-separator"></span>
 								<span class="author">{{ site.data.authors[post.author].fullname }}</span>
 							</div>
-							<p class="excerpt">{{ post.excerpt }}</p>
+							<p class="excerpt">{{ post.excerpt | strip_html }}</p>
 						</div>
 					{% endfor %}
 				</div>
@@ -45,7 +45,7 @@ layout: barebones
 								<span class="time">{{ post.date | "%b %d, %Y"}}</span><span class="vert-separator"></span>
 								<span class="author">{{ site.data.authors[post.author].fullname }}</span>
 							</div>
-							<p class="excerpt">{{ post.excerpt }}</p>
+							<p class="excerpt">{{ post.excerpt | strip_html }}</p>
 						</div>
 					{% endfor %}
 				</div>

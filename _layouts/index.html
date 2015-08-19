@@ -26,7 +26,7 @@ layout: barebones
 								<span class="time">{{ post.date | "%b %d, %Y"}}</span><span class="vert-separator"></span>
 								<span class="author">{{ site.data.authors[post.author].fullname }}</span>
 							</div>
-							<p class="excerpt">{{ post.excerpt }}</p>
+							<p class="excerpt">{{ post.excerpt | strip_html }}</p>
 						</div>
 					{% endfor %}
 				</div>
@@ -45,7 +45,7 @@ layout: barebones
 								<span class="time">{{ post.date | "%b %d, %Y"}}</span><span class="vert-separator"></span>
 								<span class="author">{{ site.data.authors[post.author].fullname }}</span>
 							</div>
-							<p class="excerpt">{{ post.excerpt }}</p>
+							<p class="excerpt">{{ post.excerpt | strip_html }}</p>
 						</div>
 					{% endfor %}
 				</div>
