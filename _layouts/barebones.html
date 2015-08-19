@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
 {% if page.lang %}
 {% assign lang = page.lang %}
 {% else %}
 {% assign lang = "vi" %}
 {% endif %}
-<head lang="{{ lang }}">
+<html lang="{{ lang }}">
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,11 +59,16 @@ body {
 .excerpt{
 	margin-top: 7px;
 	font-size: 14px;
+	padding-bottom: 30px;
 }
 .title{
 	font-family: Verdana;
 	font-weight: 300;
 	font-size: 40px;
+}
+.title::focus,.title::hover{
+	color: #444;
+	text-decoration: none;
 }
 .introduction{
 	margin-top: 40px;
@@ -126,6 +131,7 @@ body {
 		{{ content }}
 	</div>
 </div>
+
 <div id="footer">
 	<div class="container">
 		<div>Copyright &copy; 2015 Hai Nguyen. Theme and code by me. Hosted by <a href="https://github.com/hainh/hainh.github.io">GitHub</a> and powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.</div>

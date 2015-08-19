@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
 {% if page.lang %}
 {% assign lang = page.lang %}
 {% else %}
 {% assign lang = "vi" %}
 {% endif %}
-<head lang="{{ lang }}">
+<html lang="{{ lang }}">
+<head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -65,8 +65,9 @@ body {
 	font-weight: 300;
 	font-size: 40px;
 }
-.title::hover{
-
+.title::focus,.title::hover{
+	color: #444;
+	text-decoration: none;
 }
 .introduction{
 	margin-top: 40px;
