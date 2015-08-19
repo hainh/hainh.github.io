@@ -147,7 +147,7 @@ body {
 							{% if ii == 1 %}
 								{% continue %}
 							{% endif %}
-							{{ include post-excerpt.html }}
+							{% include post-excerpt.html %}
 						{% endfor %}
 					</div>
 					<!-- Second column -->
@@ -159,7 +159,7 @@ body {
 							{% if ii == 0 %}
 								{% continue %}
 							{% endif %}
-							{{ include post-excerpt.html }}
+							{% include post-excerpt.html %}
 						{% endfor %}
 					</div>
 				</div>
