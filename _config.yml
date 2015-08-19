@@ -52,6 +52,17 @@ defaults:
         values:
             layout: "post"
             author: "hainh"
+    -
+        scope:
+            path: "categories"
+        values:
+            layout: "category-index"
+    -
+        scope:
+            path: "tags"
+        values:
+            layout: "tag-index"
+    
 
 # Markdown Processors
 rdiscount:
