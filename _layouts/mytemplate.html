@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<style type="text/css">
+html,
+body {
+  height: 100%;
+  font-size: 17px;
+  font-weight: 200;
+  font-family: Verdana,san-serif;
+}
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+  font-size: 14px;
+}
+#footer .container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.post-content .title,.post-content .meta-data-post{
+	text-align: center;
+}
+.navbar{
+  border-radius: 0;
+}
+.navbar-brand{
+	font-size: 25px;
+}
+.vert-separator{
+	border-left: solid 1px rgba(0,0,0,.1);
+	margin: 0 4px;
+}
+.excerpt{
+	margin-top: 7px;
+	font-size: 14px;
+}
+.title{
+	font-family: Verdana;
+	font-weight: 300;
+	font-size: 40px;
+}
+.introduction{
+	margin-top: 40px;
+	font-style: italic;
+}
+.content{
+}
+.meta-data-post{
+	font-style: italic;
+	color: #888;
+	font-family: "Times New Roman",serif;
+	margin-bottom: 30px;
+}
+.toc{
+	margin-top: 30px;
+}
+::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(220,220,220,0.1);
+}
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+/**/
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-navbar-items" aria-expanded="false">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+		        </button>
+			    <a class="navbar-brand" href="/">HaiNH</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="my-navbar-items">
+				<ul class="nav navbar-nav">
+					<li data-toggle="collapse" data-target="#my-navbar-items"><a href="/cocos2dxjs.html">Cocos2d-x/js</a></li>
+					<li data-toggle="collapse" data-target="#my-navbar-items"><a href="/others.html">Others</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		<!-- All post index template -->
+		<div class="row" des="Index of all posts">
+			<div class="row">
+				<p class="introduction">{{ page.description}}</p>
+			</div>
+			<div class="row">
+				<div class="toc">All posts</div>
+				<hr/>
+			</div>
+			<div class="row">
+				<!-- Ok, we have two cols of posts -->
+				<!-- First column -->
+				<div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+					{% assign i = 1 %}
+					{% for post in site.posts %}
+						{% increase i %}
+						{% assign ii = i | modulo: 2 %}
+						{% if ii == 1 %}
+							{% continue %}
+						{% endif %}
+						<div class="row post-excerpt">
+							<p class="title">{{ post.title }}</p>
+							<div class="meta-data-post">
+								<span class="time">{{ post.date | "%b %d, %Y"}}</span><span class="vert-separator"></span>
+								<span class="author">{{ site.data.authors[post.author].fullname }}</span>
+							</div>
+							<p class="excerpt">{{ post.excerpt }}</p>
+						</div>
+					{% endfor %}
+				</div>
+				<!-- Second column -->
+				<div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+					{% assign i = 1 %}
+					{% for post in site.posts %}
+						{% increase i %}
+						{% assign ii = i | modulo: 2 %}
+						{% if ii == 0 %}
+							{% continue %}
+						{% endif %}
+						<div class="row post-excerpt">
+							<p class="title">{{ post.title }}</p>
+							<div class="meta-data-post">
+								<span class="time">{{ post.date | "%b %d, %Y"}}</span><span class="vert-separator"></span>
+								<span class="author">{{ site.data.authors[post.author].fullname }}</span>
+							</div>
+							<p class="excerpt">{{ post.excerpt }}</p>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+		<!-- End all post index template -->
+
+		<!-- Post template -->
+		<div class="row" desc="This is a post">
+			<div class="col-xs-12 col-lg-1"></div>
+			<div class="col-xs-12 col-lg-10 post">
+				<div class="row post-content">
+					<p class="title">{{ page.title }}</p>
+					<div class="meta-data-post">
+						<span class="time">{{ page.date | "%A %b %d, %Y" }}</span><span class="vert-separator"></span>
+						<span class="author">{% assign author = site.data.authors[page.author] %}{{ author.fullname }}</span>
+					</div>
+					<p class="content">{{ page.content }}</p>
+				</div>
+
+				<div class="row" desc="Categories and tags section">
+					{% assign post = page %}
+					{% if post.categories.size > 0 or post.tags.size > 0 %}
+						{% if post.categories.size > 0 %}
+							{% capture _cates %}in 
+								{% for category in post.categories %}
+									<a href="/categories/{{category}}" class="label {% cycle 'g1': 'label-success', 'label-primary', 'label-danger'%}">{{ category | capitalize }}</a> 
+								{% endfor %}
+							{% endcapture %}
+						{% endif %}
+						{% if post.tags.size > 0 %}
+							{% capture _tags %}with
+								{% for tag in post.tags %}
+									<a href="/tags/{{tag}}" class="tag">{{ tag | capitalize }}</a>
+									{% if tag != post.tags.last %}
+										{{', '}}
+									{% endif %}
+								{% endfor %}
+							{% endcapture %}
+						{% endif %}
+						}
+					{% endif %}}
+					<p class="cats-tags">
+						Posted {{ _cates }} {{ _tags }}.
+					</p>
+				</div>
+				<div class="row">
+					<nav>
+						<ul class="pager">
+						{% if page.previous %}
+							<li><a href="{{ page.previous }}">Previous</a></li>
+						{% endif %}
+						{% if page.next %}
+							<li><a href="{{ page.next }}">Next</a></li>
+						{% endif %}
+						</ul>
+					</nav>
+				</div>
+
+				<div class="row post-comments">
+					{{ include disqus_comment.html }}
+				</div>
+			</div>
+			<div class="col-xs-12 col-lg-1"></div>
+		</div>
+		<!-- End Post template -->
+
+	</div> <!-- End "container" -->
+</div>
+<div id="footer">
+	<div class="container">
+		<div>Copyright &copy; 2015 Hai Nguyen. Theme and code by me. Hosted by <a href="https://github.com/hainh/hainh.github.io">GitHub</a> and powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.</div>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

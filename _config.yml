@@ -8,7 +8,7 @@ collections: null
 
 # Handling Reading
 safe:         false
-include:      [".htaccess"]
+include:      [".htaccess", "CNAME"]
 exclude:      []
 keep_files:   [".git", ".svn"]
 encoding:     "utf-8"
@@ -26,7 +26,7 @@ gems:      []
 
 # Conversion
 markdown:    kramdown
-highlighter: rouge
+highlighter: pygments
 lsi:         false
 excerpt_separator: "\n\n"
 
@@ -37,13 +37,20 @@ host:    127.0.0.1
 baseurl: "" # does not include hostname
 
 # Outputting
-permalink:     /:categories/:year/:month/:day/:title/
+permalink:     /:categories/:year:month:day/:title.html/
 paginate_path: /page:num
 timezone: Asia/Ho_Chi_Minh
 paginate: 15
 
 quiet:    false
-defaults: []
+defaults: 
+    -
+        scope:
+            path: ""
+            type: "posts"
+        values:
+            layout: "default"
+            author: "hainh"
 
 #Commenting
 comments :
@@ -58,18 +65,18 @@ rdiscount:
 redcarpet:
   extensions: []
 
-kramdown:
-  auto_ids:       true
-  footnote_nr:    1
-  entity_output:  as_char
-  toc_levels:     1..6
-  smart_quotes:   lsquo,rsquo,ldquo,rdquo
-  enable_coderay: false
+# kramdown:
+  # auto_ids:       true
+  # footnote_nr:    1
+  # entity_output:  as_char
+  # toc_levels:     1..6
+  # smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  # enable_coderay: false
 
-  coderay:
-    coderay_wrap:              div
-    coderay_line_numbers:      inline
-    coderay_line_number_start: 1
-    coderay_tab_width:         4
-    coderay_bold_every:        10
-    coderay_css:               style
+  # coderay:
+    # coderay_wrap:              div
+    # coderay_line_numbers:      inline
+    # coderay_line_number_start: 1
+    # coderay_tab_width:         4
+    # coderay_bold_every:        10
+    # coderay_css:               style

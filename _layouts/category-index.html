@@ -1,0 +1,53 @@
+---
+layout: barebones
+---
+		<div class="row" des="Index of all posts">
+			<div class="row">
+				<p class="introduction">{{ page.description}}</p>
+			</div>
+			<div class="row">
+				<div class="toc">All posts in <span class="label label-success">{{page.catname}}</span></div>
+				<hr/>
+			</div>
+			<div class="row">
+				<!-- Ok, we have two cols of posts -->
+				<!-- First column -->
+				<div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+					{% assign i = 1 %}
+					{% for post in site.categories[page.catname] %}
+						{% increase i %}
+						{% assign ii = i | modulo: 2 %}
+						{% if ii == 1 %}
+							{% continue %}
+						{% endif %}
+						<div class="row post-excerpt">
+							<p class="title">{{ post.title }}</p>
+							<div class="meta-data-post">
+								<span class="time">{{ post.date | "%b %d, %Y"}}</span><span class="vert-separator"></span>
+								<span class="author">{{ site.data.authors[post.author].fullname }}</span>
+							</div>
+							<p class="excerpt">{{ post.excerpt }}</p>
+						</div>
+					{% endfor %}
+				</div>
+				<!-- Second column -->
+				<div class="col-xs-12 col-sm-12 col-lg-6 col-md-6">
+					{% assign i = 1 %}
+					{% for post in site.categories[page.catname] %}
+						{% increase i %}
+						{% assign ii = i | modulo: 2 %}
+						{% if ii == 0 %}
+							{% continue %}
+						{% endif %}
+						<div class="row post-excerpt">
+							<p class="title">{{ post.title }}</p>
+							<div class="meta-data-post">
+								<span class="time">{{ post.date | "%b %d, %Y"}}</span><span class="vert-separator"></span>
+								<span class="author">{{ site.data.authors[post.author].fullname }}</span>
+							</div>
+							<p class="excerpt">{{ post.excerpt }}</p>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>

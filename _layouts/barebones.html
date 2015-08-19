@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>{{ page.title }}</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<style type="text/css">
+html,
+body {
+  height: 100%;
+  font-size: 17px;
+  font-weight: 200;
+  font-family: Verdana,san-serif;
+}
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+  font-size: 14px;
+}
+#footer .container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.post-content .title,.post-content .meta-data-post{
+	text-align: center;
+}
+.navbar{
+  border-radius: 0;
+}
+.navbar-brand{
+	font-size: 25px;
+}
+.vert-separator{
+	border-left: solid 1px rgba(0,0,0,.1);
+	margin: 0 4px;
+}
+.excerpt{
+	margin-top: 7px;
+	font-size: 14px;
+}
+.title{
+	font-family: Verdana;
+	font-weight: 300;
+	font-size: 40px;
+}
+.introduction{
+	margin-top: 40px;
+	font-style: italic;
+}
+.content{
+}
+.meta-data-post{
+	font-style: italic;
+	color: #888;
+	font-family: "Times New Roman",serif;
+	margin-bottom: 30px;
+}
+.toc{
+	margin-top: 30px;
+}
+::-webkit-scrollbar-button {
+    display: none;
+    width: 0;
+    height: 0;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(220,220,220,0.1);
+}
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+/**/
+	</style>
+</head>
+<body>
+<div id="wrap">
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#my-navbar-items" aria-expanded="false">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+		        </button>
+			    <a class="navbar-brand" href="/">HaiNH</a>
+			</div>
+
+			<div class="collapse navbar-collapse" id="my-navbar-items">
+				<ul class="nav navbar-nav">
+					<li data-toggle="collapse" data-target="#my-navbar-items"><a href="/cocos2dxjs.html">Cocos2d-x/js</a></li>
+					<li data-toggle="collapse" data-target="#my-navbar-items"><a href="/others.html">Others</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container">
+		{{ content }}
+	</div>
+</div>
+<div id="footer">
+	<div class="container">
+		<div>Copyright &copy; 2015 Hai Nguyen. Theme and code by me. Hosted by <a href="https://github.com/hainh/hainh.github.io">GitHub</a> and powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.</div>
+	</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
