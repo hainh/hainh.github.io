@@ -8,14 +8,12 @@ layout: barebones
 					<div class="col-lg-1"></div>
 					<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
 						<p class="title">{{ page.title | upcase }}</p>
-					</div>
-					<div class="col-lg-1"></div>
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="meta-data-post">
 							<span class="time">{{ page.date | date: "%A, %b %d, %Y" }}</span><span class="vert-separator"></span><span class="author">{% assign author = site.data.authors[page.author] %}{{ author.fullname }}</span>
 						</div>
-						<p class="content">{{ content }}</p>
+						{{ content }}
 					</div>
+					<div class="col-lg-1"></div>
 				</div>
 
 				<div class="row" desc="Categories and tags section">
