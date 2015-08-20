@@ -13,7 +13,7 @@ body {
 }
 #footer {
   height: 60px;
-  background-color: #252525;
+  background-color: #303030;
   font-size: 14px;
 }
 #footer .container {
@@ -26,6 +26,7 @@ body {
 }
 .navbar{
 	border-radius: 0;
+	background-color: #303030;
 }
 .navbar-brand{
 	font-size: 25px;
@@ -79,6 +80,10 @@ pre{
     -ms-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
+code, kbd, pre, samp {
+	font-family: Consolas, monospace;
+	font-size: 14px;
 }
 ::-webkit-scrollbar-button {
     display: none;
