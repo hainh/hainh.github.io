@@ -78,6 +78,12 @@ pre{
 	border: 1px dashed #337ab7;
 	border-radius: 0;
 }
+.dropdown-menu,.popover,.list-group{
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    -ms-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+}
 ::-webkit-scrollbar-button {
     display: none;
     width: 0;
