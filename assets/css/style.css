@@ -87,6 +87,17 @@ pre{
 code, kbd, pre, samp {
 	font-family: Consolas, monospace;
 	font-size: 14px;
+	background-color: transparent;
+}
+pre,kbd,samp{
+	-webkit-box-shadow: 0 0 12px #000;
+	-ms-box-shadow: 0 0 12px #000;
+	-moz-box-shadow: 0 0 12px #000;
+	box-shadow: 0 0 12px #000;
+	border: solid 1px rgba(0,0,0,.8);
+}
+pre{
+	border-radius: 0;
 }
 ::-webkit-scrollbar-button {
     display: none;
