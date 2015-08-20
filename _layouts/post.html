@@ -5,7 +5,6 @@ layout: barebones
 			<div class="col-xs-12 col-lg-1"></div>
 			<div class="col-xs-12 col-lg-10 post">
 				<div class="row post-content">
-					<div class="col-lg-1"></div>
 					<div class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
 						<p class="title">{{ page.title | upcase }}</p>
 						<div class="meta-data-post">
@@ -13,7 +12,6 @@ layout: barebones
 						</div>
 						{{ content }}
 					</div>
-					<div class="col-lg-1"></div>
 				</div>
 
 				<div class="row" desc="Categories and tags section">
@@ -51,7 +49,7 @@ layout: barebones
 				{% endif %}
 
 				<div class="row post-comments">
-					{{ include disqus_comment.html }}
+					{{ include disqus-comment.html }}
 				</div>
 			</div>
 			<div class="col-xs-12 col-lg-1"></div>
