@@ -15,7 +15,6 @@ future:      true
 unpublished: false
 
 # Conversion
-highlighter: pygments
 excerpt_separator: "\n\n"
 
 # Serving
