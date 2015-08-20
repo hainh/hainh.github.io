@@ -1,8 +1,10 @@
 ---
 title: "first try"
 layout: post
-category: "cocos2d-x-js"
+categories: ["cocos2d-x-js", "tutorial"]
 tags: ["programming", "training"]
+author: hainh
 ---
+
 
 ##Ok, I'll try this out
