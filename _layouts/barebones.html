@@ -1,23 +1,15 @@
+{% if page.lang %}{% assign lang = page.lang %}{% else %}{% assign lang = "vi" %}{% endif %}
+{% if page.author %}{% assign author = page.author %}{% else %}{% assign author = "hainh" %}{% endif %}
 <!DOCTYPE html>
-{% if page.lang %}
-{% assign lang = page.lang %}
-{% else %}
-{% assign lang = "vi" %}
-{% endif %}
 <html lang="{{ lang }}">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="{{ page.description }}">
-    {% if page.author %}
-    {% assign author = page.author %}
-    {% else %}
-    {% assign author = "hainh" %}
-    {% endif %}
-    <link rel="author" href="https://plus.google.com/+{{ site.data.authors[author].gplus.profile }}"/>
-	<title>{{ page.title }}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="description" content="{{ page.description }}">
+	<link rel="author" href="https://plus.google.com/+{{ site.data.authors[author].gplus.profile }}"/>
+	<title>{{ page.title | slice: 0, 1 | capitalize }}{{ page.title | slice : 1 }}</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<style type="text/css">
 html,
@@ -140,7 +132,11 @@ a.title:focus,a.title:hover{
 
 <div id="footer">
 	<div class="container">
-		<div>Copyright &copy; 2015 Hai Nguyen. Theme and code by me. Hosted by <a href="https://github.com/hainh/hainh.github.io">GitHub</a> and powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.</div>
+		<div class="row">
+			<div class="col-xs-12 col-lg-12">
+				<span>Copyright &copy; 2015 Hai Nguyen. Theme and code by me. Hosted by <a href="https://github.com/hainh/hainh.github.io">GitHub</a> and powered by <a href="https://github.com/mojombo/jekyll">Jekyll</a>.</span>
+			</div>
+		</div>
 	</div>
 </div>
 
