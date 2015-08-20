@@ -1,5 +1,4 @@
 # Where things are
-source:      .
 destination: ./_site
 plugins:     ./_plugins
 layouts:     ./_layouts
@@ -8,7 +7,6 @@ collections: null
 url: http://hainh.gamesen.vn
 
 # Handling Reading
-safe:         false
 include:      [".htaccess", "CNAME"]
 exclude:      []
 keep_files:   [".git", ".svn"]
@@ -27,8 +25,7 @@ gems:      []
 
 # Conversion
 markdown:    kramdown
-highlighter: pygments
-lsi:         false
+highlighter: null
 excerpt_separator: "\n\n"
 
 # Serving
@@ -75,12 +72,4 @@ kramdown:
   footnote_nr:    1
   entity_output:  as_char
   toc_levels:     1..6
-  enable_coderay: true
-
-  coderay:
-    coderay_wrap:              div
-    coderay_line_numbers:      table
-    coderay_line_number_start: 1
-    coderay_tab_width:         4
-    coderay_bold_every:        10
-    coderay_css:               class
+  enable_coderay: false

@@ -8,3 +8,9 @@ author: hainh
 
 
 ##Ok, I'll try this out
+
+~~~ java
+public static String getOwner() {
+    return "Hainh";
+}
+~~~
