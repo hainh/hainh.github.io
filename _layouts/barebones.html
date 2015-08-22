@@ -1,18 +1,26 @@
-{% if page.lang %}{% assign lang = page.lang %}{% else %}{% assign lang = "vi" %}{% endif %}
+{% if page.lang %}{% assign lang = page.lang %}{% else %}{% assign lang = "vi-VN" %}{% endif %}
 {% if page.author %}{% assign author = page.author %}{% else %}{% assign author = "hainh" %}{% endif %}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<meta name="description" content="{{ page.description }}">
-	<link rel="author" href="https://plus.google.com/+{{ site.data.authors[author].gplus.profile }}"/>
-	<title>{{ page.title | capitalize }}</title>
-	<link rel="stylesheet" href="/assets/css/supernice.min.css">
-	<link rel="stylesheet" href="/assets/css/monokai_sublime.css">
-	<link rel="stylesheet" href="/assets/css/style.css">
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<meta name="description" content="{{ page.description | strip_html}}" />
+	<meta property="og:description" content="{{ page.description | strip_html}}" />
+	<meta property="og:site_name" content="hainh.github.io" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+	<meta property="og:title" content="{{ page.title | capitalize }} &bull; HaiNH" />
+	<meta property="og:locale" content="{{ lang }}" /> 
+	<link rel="canonical" href="http://hainh.github.io/" />
+	<link rel="author" href="https://plus.google.com/+{{ site.data.authors[author].gplus.profile }}" />
+	<title />{{ page.title | capitalize }} &bull; HaiNH</title />
+	<link rel="stylesheet" href="/assets/css/supernice.min.css" />
+	<link rel="stylesheet" href="/assets/css/monokai_sublime.css" />
+	<link rel="stylesheet" href="/assets/css/style.css" />
+	{% include analytics.html %}
 </head>
 <body>
 <div id="wrap">
