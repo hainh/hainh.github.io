@@ -1,7 +1,7 @@
 {% if page.lang %}{% assign lang = page.lang %}{% else %}{% assign lang = "vi-VN" %}{% endif %}
 {% if page.author %}{% assign author = page.author %}{% else %}{% assign author = "hainh" %}{% endif %}
-{% if page.title %}{% assign title = page.title %}{% elsif page.catname %}{% assign title = page.catname %}{% else %}{% assign title = page.tagname %}{% endif %} {% assign title = title | capitalize %}
-{% if page.id %}{% assign id = page.id %}{% else %}{% assign id = title %}{% endif %}
+{% assign title = '' %}{% if page.title %}{% assign title = page.title %}{% elsif page.catname %}{% assign title = page.catname %}{% else %}{% assign title = page.tagname %}{% endif %} {% assign title = title | capitalize %}
+{% assign id = '' %}{% if page.id %}{% assign id = page.id %}{% else %}{% assign id = title %}{% endif %}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 <head>
