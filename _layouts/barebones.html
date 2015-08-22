@@ -1,5 +1,7 @@
 {% if page.lang %}{% assign lang = page.lang %}{% else %}{% assign lang = "vi-VN" %}{% endif %}
 {% if page.author %}{% assign author = page.author %}{% else %}{% assign author = "hainh" %}{% endif %}
+{% if page.title %}{% assign title = page.title %}{% elsif page.catname %}{% assign title = page.catname %}{% else %}{% assign title = page.tagname %}{% endif %} {% assign title = title | capitalize %}
+{% if page.id %}{% assign id = page.id %}{% else %}{% assign id = title %}{% endif %}
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 <head>
@@ -12,11 +14,11 @@
 	<meta property="og:site_name" content="hainh.github.io" />
 	<meta property="og:type" content="article" />
 	<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-	<meta property="og:title" content="{{ page.title | capitalize }} &bull; HaiNH" />
+	<meta property="og:title" content="{{ title }} &bull; HaiNH" />
 	<meta property="og:locale" content="{{ lang }}" /> 
 	<link rel="canonical" href="http://hainh.github.io/" />
 	<link rel="author" href="https://plus.google.com/+{{ site.data.authors[author].gplus.profile }}" />
-	<title />{{ page.title | capitalize }} &bull; HaiNH</title />
+	<title />{{ title }} &bull; HaiNH</title />
 	<link rel="stylesheet" href="/assets/css/supernice.min.css" />
 	<link rel="stylesheet" href="/assets/css/monokai_sublime.css" />
 	<link rel="stylesheet" href="/assets/css/style.css" />
