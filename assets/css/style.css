@@ -4,7 +4,7 @@
 html,
 body {
 	height: 100%;
-	font-size: 17px;
+	font-size: 15px;
 	font-weight: 200;
 	font-family: 'Open Sans', Verdana, sans-serif;
 }
@@ -21,6 +21,7 @@ h5,
 h6,
 .h6 {
 	font-family:'Open Sans Condensed', Verdana, Helvetica, sans-serif;
+	font-weight: 800;
 }
 #wrap {
 	min-height: 100%;
