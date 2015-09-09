@@ -1,9 +1,26 @@
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic);
+@import url(//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700,700italic);
+
 html,
 body {
 	height: 100%;
 	font-size: 17px;
 	font-weight: 200;
-	font-family: Verdana,san-serif;
+	font-family: 'Open Sans', Verdana, sans-serif;
+}
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-family:'Open Sans Condensed', Verdana, Helvetica, sans-serif;
 }
 #wrap {
 	min-height: 100%;
@@ -67,7 +84,7 @@ a.title:focus,a.title:hover{
 .meta-data-post{
 	font-style: italic;
 	color: #bbb;
-	font-family: "Times New Roman",serif;
+	font-family: 'Times New Roman',serif;
 	margin: 45px 0;
 }
 .toc{
